@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Product Dashboard Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React.js application that interacts with a product API to build a comprehensive dashboard. The application fetches, displays, filters, and sorts product data while providing detailed views and ensuring good performance and usability.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [State Management](#state-management)
+- [API Reference](#api-reference)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Data Fetching**: Fetch product data from a given API and handle errors gracefully.
+- **Product List**: Display products in a tabular format with columns for Title, Price, and Popularity.
+- **Search Bar**: Filter products by title.
+- **Filters**: Filter products by price and popularity ranges.
+- **Sorting**: Sort products by price and popularity in ascending or descending order.
+- **Pagination**: Display a limited number of products per page with navigation controls.
+- **Product Details**: View detailed information about each product in a modal or separate route.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop views.
+- **State Management**: Efficiently handle state with Redux and `createAsyncThunk` for API calls.
+- **Error Handling**: Properly manage errors with React Router error elements.
+- **Testing**: Includes unit tests for key components using Jest and React Testing Library.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+Follow these instructions to set up and run the project on your local machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js (v14 or later)
+- React-router-dom
+- fontawesome
+- bootstrap
+- react-redux toolkit
+- npm or yarn
+- Git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the Repository**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/yourusername/product-dashboard.git
+   cd product-dashboard
 
-### `npm run eject`
+2. **Install dependencies**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+    npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Usage**
+Run the Application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+start local server to resolve CORS error
+node .\src\proxy-server.js
+The application will start on http://localhost:8080.
 
-## Learn More
+Start project 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm start
+The application will start on http://localhost:3000.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Build for Production
 
-### Code Splitting
+To create a production build, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+bash
 
-### Analyzing the Bundle Size
+npm run build
+Serve the Production Build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+After building the project, you can serve it locally using:
 
-### Making a Progressive Web App
+bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+npx serve -s build
+This will serve the build on http://localhost:5000 (or another available port).
 
-### Advanced Configuration
+API Reference
+Product Data API: https://cdn.drcode.ai/interview-materials/products.json
+Handling CORS: Use a proxy server if needed for CORS issues during development.
+Testing
+Jest and React Testing Library are used for testing components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To run tests, use:
 
-### Deployment
+bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+npm test
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
