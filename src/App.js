@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -16,10 +16,11 @@ const App = () => {
       element: <Navbar />,
       errorElement: <Error />,
       children:[
+        { path: "/", element: <Navigate to="/1" /> },
         // default home page
-        {index:true, element: <Homepage />}, 
+        {path:":pageNo", element: <Homepage />}, 
         // Product details page
-        {path:"/detailspage", element: <DetailsPage />},
+        {path:"/detailspage/:id", element: <DetailsPage />},
         // about page        
         {path:"/about", element: <p>About page</p>},
       ]

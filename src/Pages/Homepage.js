@@ -13,7 +13,7 @@ import { useParams } from "react-router-dom";
 
 const Homepage = () => {
     const dispatch = useDispatch();
-    const { products, status, error, filteredProducts } = useSelector((state) => state.products);
+    const { status, error, filteredProducts } = useSelector((state) => state.products);
     const {pageNo} = useParams();
   
     useEffect(() => {

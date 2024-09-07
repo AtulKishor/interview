@@ -69,11 +69,13 @@ const productSlice = createSlice({
     setPage: (state, action) => {
       state.currentPage = action.payload;
     },
-    openProductDetails: (state, action) => {
-      state.selectedProduct = action.payload;
-    },
-    closeProductDetails: (state) => {
-      state.selectedProduct = null;
+    fetchProductDetail: (state, action) => {
+      state.selectedProduct = {
+        "subcategory": "mobile",
+        "title": "Apple iPhone 3GS 16GB",
+        "price": "12179",
+        "popularity": "2579"
+    };
     },
   },
   extraReducers: (builder) => {
@@ -83,8 +85,13 @@ const productSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.products = action.payload;
-        state.filteredProducts = action.payload; // Initialize filtered products with all products
+        const res = [];        
+        Object.entries(action.payload).forEach(([id,product]) => {
+          res.push({id, product})
+        });
+        
+        state.products = [...res];
+        state.filteredProducts =  [...res]; // Initialize filtered products with all products
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = 'failed';
@@ -100,8 +107,7 @@ export const {
   setPopularityRange,
   setSortBy,
   setPage,
-  openProductDetails,
-  closeProductDetails,
+  fetchProductDetail,
 } = productSlice.actions;
 
 export default productSlice.reducer;

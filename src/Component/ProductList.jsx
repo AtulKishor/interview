@@ -13,7 +13,7 @@ const ProductList = ({ products }) => {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(products).map(([id,product]) => (
+        {products.map(({id,product}) => (
           <tr key={id}>
             <td><Link to={`/detailspage/${id}`}>{product.title}</Link></td>
             <td>{product.price}</td>
