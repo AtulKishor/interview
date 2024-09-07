@@ -1,14 +1,7 @@
-// src/components/ProductList.js
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { openProductDetails } from '../Redux/Reducer/productSlice';
+
+import { Link } from 'react-router-dom';
 
 const ProductList = ({ products }) => {
-  const dispatch = useDispatch();
-
-  const handleProductClick = (product) => {
-    dispatch(openProductDetails(product));
-  };
 
   return (
     <table className="product-list">
@@ -21,8 +14,8 @@ const ProductList = ({ products }) => {
       </thead>
       <tbody>
         {Object.entries(products).map(([id,product]) => (
-          <tr key={id} onClick={() => handleProductClick(product)}>
-            <td>{product.title}</td>
+          <tr key={id}>
+            <td><Link to={`/detailspage/${id}`}>{product.title}</Link></td>
             <td>{product.price}</td>
             <td>{product.popularity}</td>
           </tr>

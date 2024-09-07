@@ -9,7 +9,7 @@ const Navbar = () => {
         <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <NavLink to="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <FontAwesomeIcon className="bi fs-1 mx-2" icon={faProductHunt} />
-            <h1 className="fs-4">Products Company</h1>
+            <h1 className="fs-4">Products </h1>
           </NavLink>
     
           <ul className="nav nav-pills">

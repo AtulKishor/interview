@@ -8,17 +8,18 @@ const Sort = () => {
 
   return (
     <div className="sort">
+      Sort by
       <button onClick={() => dispatch(setSortBy('price-asc'))}>
-        Sort by Price Ascending
+        Price Ascending
       </button>
       <button onClick={() => dispatch(setSortBy('price-desc'))}>
-        Sort by Price Descending
+        Price Descending
       </button>
       <button onClick={() => dispatch(setSortBy('popularity-asc'))}>
-        Sort by Popularity Ascending
+        Popularity Ascending
       </button>
       <button onClick={() => dispatch(setSortBy('popularity-desc'))}>
-        Sort by Popularity Descending
+        Popularity Descending
       </button>
     </div>
   );

@@ -1,0 +1,102 @@
+Overview:
+Create a React.js application that interacts with a product API to build a comprehensive dashboard. 
+The application should fetch, display, filter, and sort product data, while also providing detailed views and 
+ensuring good performance and usability.
+
+Problem Statement:
+
+Your task is to build a Product Dashboard application that meets the following requirements:
+
+1. Data Fetching:
+   - Fetch product data from the provided API URL: https://cdn.drcode.ai/interview-materials/products.json.
+   - Handle API errors and display appropriate error messages if the data cannot be fetched.
+
+2. User Interface:
+   - Product List:
+     - Display a list of products with the following columns:
+       - Title: The name of the product.
+       - Price: The price of the product.
+       - Popularity: The popularity score of the product.
+     - Implement a table or grid layout for displaying the products.
+
+   - Search Bar:
+     - Implement a search bar to filter products by their title.
+
+   - Filters:
+     - Add filter options to allow users to:
+       - Filter products by price range (e.g., 0-5000, 5000-10000, 10000-20000, 20000+).
+       - Filter products by popularity range (e.g., 0-10000, 10000-30000, 30000-50000, 50000+).
+
+   - Sorting:
+     - Provide sorting options to order products by:
+       - Price (ascending/descending)
+       - Popularity (ascending/descending)
+
+   - Pagination:
+     - Implement pagination to display a limited number of products per page (e.g., 20 products per page).
+     - Include navigation controls to move between pages.
+
+   - Product Details:
+     - When a product is clicked, open a detailed view that shows:
+       - Title
+       - Price
+       - Popularity
+       - Description (Assume a placeholder description if not provided)
+     - Use a modal or a separate route to display the detailed view.
+
+   - Responsive Design:
+     - Ensure the application is responsive and works well on various screen sizes (mobile, tablet, desktop).
+
+3. Performance and State Management:
+   - Efficiently handle data fetching, state management, and rendering, especially with large datasets.
+   - Use React Context API or Redux for state management, if applicable.
+
+4. Testing:
+   - Write unit tests for key components and functionality using Jest and React Testing Library.
+   - Ensure that your tests cover the core features and edge cases.
+
+5. Documentation:
+   - Provide clear instructions on how to set up and run the project, including dependencies and any configuration steps.
+   - Document key components and their purpose.
+
+6. Deployment:
+   - Deploy the application to a public hosting platform (e.g., Vercel, Netlify, GitHub Pages).
+   - Provide a live demo link in your submission.
+
+
+Submission (IMPORTANT):
+- Submit the code in a GitHub repository.
+- Include a README file with setup instructions and any relevant information.
+- Provide a live demo link to the deployed application.
+
+
+{
+    "count": 1000,
+    "products": {
+        "12": {
+            "subcategory": "mobile",
+            "title": "Apple iPhone 3GS 16GB",
+            "price": "12179",
+            "popularity": "2579"
+        },
+        "15": {
+            "subcategory": "mobile",
+            "title": "Apple iPhone 4",
+            "price": "12749",
+            "popularity": "3028"
+        },
+        "19": {
+            "subcategory": "mobile",
+            "title": "BlackBerry Curve 3G 9300",
+            "price": "8990",
+            "popularity": "240"
+        },
+        "20": {
+            "subcategory": "mobile",
+            "title": "BlackBerry Curve 8520",
+            "price": "9390",
+            "popularity": "392"
+        },
+        .........
+    }
+}

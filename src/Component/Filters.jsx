@@ -16,6 +16,7 @@ const Filters = () => {
 
   return (
     <div className="filters">
+      <span>Filter by price: </span>
       <select onChange={handlePriceChange}>
         <option value="0-5000">0-5000</option>
         <option value="5000-10000">5000-10000</option>
@@ -23,6 +24,7 @@ const Filters = () => {
         <option value="20000+">20000+</option>
       </select>
 
+      <span>Filter by popularity: </span>
       <select onChange={handlePopularityChange}>
         <option value="0-10000">0-10000</option>
         <option value="10000-30000">10000-30000</option>

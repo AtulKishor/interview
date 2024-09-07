@@ -5,8 +5,9 @@ import { setPage } from '../Redux/Reducer/productSlice';
 
 const Pagination = () => {
   const dispatch = useDispatch();
-  const { currentPage, totalPages } = useSelector((state) => state.products);
-
+  const { currentPage, itemsPerPage, filteredProducts } = useSelector((state) => state.products);
+  
+  const totalPages = Math.floor(filteredProducts.length/itemsPerPage);
   const handlePageChange = (page) => {
     dispatch(setPage(page));
   };

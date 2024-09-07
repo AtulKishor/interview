@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ /* home page  */
+ .home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  * {
+    margin: .3rem;
+  }
+ }
+
+.product-list {
+  
+  width: 80%;
+  thead {
+    background-color: azure;
+    font-weight: bolder;
+    color: blue;
+  }
+}

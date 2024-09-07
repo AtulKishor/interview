@@ -1,34 +1,24 @@
-import { useEffect, useState } from "react";
-// Components
+
+import { useDispatch, useSelector } from 'react-redux';
+import { closeProductDetails } from '../Redux/Reducer/productSlice';
+import { useParams } from 'react-router-dom';
 
 const DetailsPage = () => {
-    const [date,setDate] = useState('');
-    useEffect(() => {
-        const newDate =  new Date().toString();
-        // store the current day and date in state
-        setDate(`${newDate.slice(0,3)}, ${newDate.slice(3,15)}`);
-    },[]);
-    
-    return(
-    <div className="w-100 h-100 bg-fixed overflow-auto d-flex justify-content-center align-items-center">
-        <div className="w-90 h-92 rounded shadow-sm d-flex flex-column justify-content-between p-2 align-items-center">
-            <div className="w-100 h-12 rounded shadow bg-info p-1 px-2 m-2 d-flex justify-content-between align-items-center fs-4 text-white font-weight-semibold">           
-                <div>
-                    Hey Champ,
-                </div>
-                <div>
-                    {date}
-                </div>
-            </div>
-            <div className="w-100 h-90 rounded shadow d-block d-md-flex bg-info p-2 bg-fixed"> 
-                {/* render the list of all the habits selected by a user on large screen only */}
-                
-                {/* to show status of a habit */}
-                
-            </div>
-        </div>
-    </div>    
-    )
-}
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.products.selectedProduct);
+  const {id} = useParams();
+
+  if (!product) return null;
+
+  return (
+    <div className="product-details">
+      <h2>{product.title}</h2>
+      <p>Price: {product.price}</p>
+      <p>Popularity: {product.popularity}</p>
+      <p>Description: {product.description || 'No description available'}</p>
+      <button onClick={() => dispatch(closeProductDetails())}>Close</button>
+    </div>
+  );
+};
 
 export default DetailsPage;
