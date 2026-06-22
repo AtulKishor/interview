@@ -26,3 +26,10 @@ async def global_exception_handler(request, exc):
             "error":"Internal server error"
         }
     )
+
+@app.get("/", include_in_schema=False)
+def home():
+    return JSONResponse(
+        status_code=200,
+        content={ "message": f"Welcome to {settings.APP_NAME} API." }
+    )
